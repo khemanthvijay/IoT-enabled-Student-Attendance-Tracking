@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  db:
+    build: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: iot
+    restart: always
+  server:
+    build: ./server
+    environment:
+      MYSQL_DATABASE: iot
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_HOST: db
+    ports:
+      - "5004:5004"
+    depends_on:
+      - db
+    restart: on-failure
+    container_name: student-server-side
+  client:
+    build:
+      context: ./client
+    ports:
+      - "5003:5003"
+    container_name: student-client-side
+    stdin_open: true
