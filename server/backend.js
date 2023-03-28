@@ -304,7 +304,7 @@ app.get('/showtimetable',(req,response)=>{
 })
 app.get('/get/details/all',(req,response)=>{
     const id =req.params.id;
-    con.query('select id,rfid,fName,lName,age,gender,department,year from iot.student_details',(err,res)=>{
+    con.query('select id,rfid,fName,lName,mobile,age,gender,department,year from iot.student_details',(err,res)=>{
         if(err) throw err;
         //console.log(res);
         response.send(res);
@@ -318,7 +318,7 @@ app.get('/changedelay/:tim',(req,res)=>{
 
 
 app.get('/changetim/:id',(req,res)=>{
-    const id=req.params.tim;
+    const id=req.params.id;
     if(id==1){
         st=0;
     }
@@ -329,7 +329,7 @@ app.get('/changetim/:id',(req,res)=>{
 })
 
 app.get('/onoff/:id',(req,res)=>{
-    const id=req.params.tim;
+    const id=req.params.id;
     if(id==1){
         manual=false;
     }
