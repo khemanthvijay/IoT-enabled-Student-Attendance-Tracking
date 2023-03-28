@@ -127,8 +127,8 @@ function tabin(sts,val){
     sch();
     }
 function upd_tab(val)
-var subj;
 {
+    var subj;
     if(val=="oe1"||val=="OE1"||val=="oe-1"||val=="OE-1"){
         subj="oe"
     }
