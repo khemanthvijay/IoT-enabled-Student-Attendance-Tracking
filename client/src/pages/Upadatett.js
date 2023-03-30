@@ -6,7 +6,9 @@ import  Axios  from 'axios';
 function Upadatett() {
     
 const [subject,setSubject] = useState('');
+const [chour,setChour] = useState(0);
 const [hour,setHour] = useState(0);
+const [cday,setCday] = useState('');
 const [day,setDay] = useState('');
 const[time,setTime] = useState('');
 const[checksubj,setChecksubj]=useState('');
@@ -43,7 +45,7 @@ const[checksubj,setChecksubj]=useState('');
            <h2>check previous data</h2>
            <div>
            <label>Day : </label>
-                <select name = "day" value={day} className='dropd' onChange={event=>setDay(event.target.value)}>
+                <select name = "day" value={cday} className='dropd' onChange={event=>setCday(event.target.value)}>
                     <option>Select Day</option>
                     <option >Monday</option>
                     <option >Tuesday</option>
@@ -54,7 +56,7 @@ const[checksubj,setChecksubj]=useState('');
                  </select> {" "}
 
                  <label>Hour : </label>
-         <select name = "hour" value={hour} className='dropd' onChange={event=>setHour(event.target.value)}>
+         <select name = "hour" value={chour} className='dropd' onChange={event=>setChour(event.target.value)}>
                     <option>Select Hour</option>
                     <option value="1">H1</option>
                     <option value="2">H2</option>
@@ -79,19 +81,10 @@ const[checksubj,setChecksubj]=useState('');
            <label>Subject : </label>
                 <select name = "subject" value={subject} className='dropd' onChange={event=>setSubject(event.target.value)}>
                     <option>Select Subject</option>
-                    <option>Select one</option>
-                    <option >adc</option>
-                    <option >fc</option>
-                    <option >fl</option>
-                    <option >pbl</option>
-                    <option >crs</option>
-                    <option >iotpa</option>
-                    <option >sac</option>
-                    <option >pbl</option>
-                    <option >oe</option>
-                    <option >esd</option>
-                    <option >uhv</option>
-                    <option >dnp</option>
+                    <option  >adc</option>
+                    <option >OE-1</option>
+                    <option >OE-2</option>
+                    <option >OE-3</option>
                  </select>
             {" "}
                 <label>Day : </label>
