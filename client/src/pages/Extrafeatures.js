@@ -3,14 +3,15 @@ import Axios from 'axios';
 import { useState, React } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Home() {
+function Extrafeatures() {
      
    
 
     let navigate = useNavigate();
     const [tim, setTim] = useState(0);
+    const[h,setH]=useState(0);
     const changedel=()=>{
-    Axios.get(`http://65.49.44.136:5004/changedelay/${tim}`).then((res)=>{
+    Axios.get(`http://localhost:3001/changedelay/${tim}`).then((res)=>{
         if(res.data==="ok"){
             console.log('ok')
         }
@@ -26,6 +27,13 @@ function Home() {
     }
     const changeserver=(id)=>{
         Axios.get(`http://65.49.44.136:5004/onoff/${id}`).then((res)=>{
+            if(res.data==="ok"){
+                console.log('ok')
+            }
+        })
+    }
+    const changehour=()=>{
+        Axios.get(`http://65.49.44.136:5004/changenextclasshour/${h}`).then((res)=>{
             if(res.data==="ok"){
                 console.log('ok')
             }
@@ -61,6 +69,14 @@ function Home() {
             <button  onClick={() => {changeserver(1);}}> ON Server</button>
             <button  onClick={() => {changeserver(2);}}> Off Server </button>
             </div>
+            <div className='Hem'>
+            <label>Change next class hour : </label> 
+            <input id = "input" type = 'number' placeholder='Enter hour' 
+            onChange={(event) => {
+                setH(event.target.value);
+            }}></input>
+            <button  onClick={() => {changehour();}}> update</button>
+            </div>
             <br/>
             <br/>
             <br/>
@@ -70,4 +86,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Extrafeatures;
