@@ -13,7 +13,7 @@ const twilio = require('twilio')(sid,auth_token)
 app.use(cors());
 app.use(express.json());
 
-var manual=false;
+var manual=true;
 var t=0;
 var st=0;
 var sam;
@@ -50,6 +50,7 @@ function sch(){
         sch();
     }
     var h,m;
+    t=parseInt(t);
     t+=1;
     if(manual!=true){
         h=hour[t-1].slice(0,2);
@@ -64,7 +65,7 @@ function sch(){
    }
 }
 
-sch();
+//sch();
 function timeTab(){
     let date_ob = new Date();
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
