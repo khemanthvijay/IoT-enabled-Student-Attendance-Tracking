@@ -5,8 +5,8 @@ const nodeCron = require("node-cron");
 const mqtt = require('mqtt');
 const app = express()
 
-const sid = 'ACe21cdc97f7522b24eb0abb8b45ea25d0'
-const auth_token = 'bee5b4138217983ed00ed9017d22f153'
+const sid = '' //add your sid
+const auth_token = '' //add your token
 
 const twilio = require('twilio')(sid,auth_token)
 
@@ -26,8 +26,8 @@ var sts;
 const con = mysql.createConnection({
     // host : "localhost",
     // user : "root",
-    // password : "password",
-    // database: "iot"
+    // password : "password", //add your password
+    // database: "" //add your database name
     connectionLimit: 10,
     host: process.env.MYSQL_HOST || "localhost",
     user: process.env.MYSQL_USER || "root",
