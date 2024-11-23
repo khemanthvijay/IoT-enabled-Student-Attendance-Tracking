@@ -1,5 +1,4 @@
-
-IoT-enabled Student Attendance Tracking | Jan 2023-Feb 2023 
+IoT-enabled Student Attendance Tracking  
 • Developed an IoT-based system for automated attendance tracking using Node.js for backend processing, 
 
 MySQL for data storage, and React.js for the frontend interface
